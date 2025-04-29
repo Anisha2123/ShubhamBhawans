@@ -22,7 +22,7 @@ const Home = () => {
 
       {/* Services Section */}
       <section id="services" className="py-0">
-        <Services />
+        {/* <Services /> */}
       </section>
 
       {/* Pricing Section */}
