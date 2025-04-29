@@ -10,6 +10,8 @@ import ContactForm from "./ContactForm";
 import Testimonials from "./Testimonials";
 import Navbar from "./NavBar";
 import Footer from "./Footer";
+import FloatingWhatsAppButton from "./FloatingWhatsAppButton";
+
 
 const Home = () => {
   return (
@@ -32,18 +34,18 @@ const Home = () => {
       <section id="about" className="py-0">
         <AboutUs />
       </section>
-      <section id="contact" className="py-0">
-        <ContactForm />
-      </section>
+      
       <section id="test" className="py-0">
         <Testimonials />
       </section>
-
+      <section id="contact" className="py-0">
+        <ContactForm />
+      </section>
       
 
       {/* Footer */}
       <Footer />
-
+      <FloatingWhatsAppButton />
     </main>
   );
 };
