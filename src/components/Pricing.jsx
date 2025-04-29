@@ -160,18 +160,18 @@ import idol2 from '../assets/images/idols/i2.jpg';
 import '../App.css';
 
 const bhawansData = [
-  { title: "Bhawans B1", image: b1, price: "₹5,000", time: "1-2 Days", description: "Perfect for small mandirs, events, and poojas." },
-  { title: "Bhawans B2", image: b2, price: "₹10,000", time: "1-2 Days", description: "Highly detailed for medium gatherings." },
-  { title: "Bhawans B3", image: b3, price: "₹8,000", time: "1-2 Days", description: "Elegant and beautifully designed setups." },
-  { title: "Bhawans B4", image: b4, price: "₹10,000", time: "1-2 Days", description: "Grand events with intricate craftsmanship." },
-  { title: "Bhawans B5", image: b5, price: "₹10,000", time: "1-2 Days", description: "Majestic mandapam setup for poojas." },
-  { title: "Bhawans B6", image: b6, price: "₹12,000", time: "1-2 Days", description: "Ornate temple-style structures." },
-  { title: "Bhawans B7", image: b7, price: "₹10,000", time: "10-14 Days", description: "Exclusive luxury crafted Bhawans." },
+  { title: "Bhawans", image: b1, price: "₹5,000", time: "1-2 Days", description: "Perfect for small mandirs, events, and poojas." },
+  { title: "Bhawans", image: b2, price: "₹10,000", time: "1-2 Days", description: "Highly detailed for medium gatherings." },
+  { title: "Bhawans", image: b3, price: "₹8,000", time: "1-2 Days", description: "Elegant and beautifully designed setups." },
+  { title: "Bhawans", image: b4, price: "₹10,000", time: "1-2 Days", description: "Grand events with intricate craftsmanship." },
+  { title: "Bhawans", image: b5, price: "₹10,000", time: "1-2 Days", description: "Majestic mandapam setup for poojas." },
+  { title: "Bhawans", image: b6, price: "₹12,000", time: "1-2 Days", description: "Ornate temple-style structures." },
+  { title: "Bhawans", image: b7, price: "₹10,000", time: "10-14 Days", description: "Exclusive luxury crafted Bhawans." },
 ];
 
 const idolsData = [
-  { title: "Idol - Laxmi", image: idol1, price: "₹8,000", time: "2-4 Days", description: "Bless your home with Laxmi Mata’s grace." },
-  { title: "Idol - Ganesha", image: idol2, price: "₹7,500", time: "3-5 Days", description: "Divine Ganesha idol, perfect for all poojas." },
+  { title: "Idol - Sai Baba", image: idol1, price: "₹8,000", time: "2-4 Days", description: "Bless your home with Laxmi Mata’s grace." },
+  { title: "Idol - Bholenath", image: idol2, price: "₹7,500", time: "3-5 Days", description: "Divine Ganesha idol, perfect for all poojas." },
 ];
 
 const PricingCard = ({ title, image, price, time, description }) => (

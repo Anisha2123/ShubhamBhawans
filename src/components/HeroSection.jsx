@@ -92,6 +92,13 @@ import heroAnimation from "../assets/lotties/hero-animation.json";
 import Lottie from "lottie-react";
 
 const HeroSection = () => {
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
+      
   return (
     <section className="hero relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-black flex flex-col justify-center items-center text-center p-6 overflow-hidden">
 
@@ -145,19 +152,18 @@ const HeroSection = () => {
         <button className="px-8 py-4 border-2 border-orange-400 text-orange-400 font-semibold rounded-full hover:bg-orange-400 hover:text-black hover:shadow-lg hover:scale-105 transform transition duration-300">
           Book Now
         </button> */}
-        <button
-  onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+     <button onClick={() => scrollToSection('gallery')} 
   className="px-8 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-orange-400 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300"
 >
   View Gallery
 </button>
 
-<button
-  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+<button onClick={() => scrollToSection('contact')}
   className="px-8 py-4 border-2 border-orange-400 text-orange-400 font-semibold rounded-full hover:bg-orange-400 hover:text-black hover:shadow-lg hover:scale-105 transform transition duration-300"
 >
   Book Now
 </button>
+
 
       </motion.div>
 

@@ -3,6 +3,14 @@
 @import "tailwindcss";
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+button{
+  cursor: pointer;
+}
+
 /* ===========================HeroSection========================== */
 /* Glowing effect for background of Lottie animation */
 @keyframes glow {
