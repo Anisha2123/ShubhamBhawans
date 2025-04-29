@@ -12,55 +12,102 @@ import b6 from '../assets/images/bhawans/b6.jpg';
 import b7 from '../assets/images/bhawans/b7.jpg';
 import '../App.css'; // Import external CSS
 
-const Pricing = () => {
-  const bhawans = [
-    { image: b1, title: "Bhawan 1", price: "₹50,000", material: "Customized" },
-    { image: b2, title: "Bhawan 2", price: "₹60,000", material: "Wooden" },
-    { image: b3, title: "Bhawan 3", price: "₹55,000", material: "Mitti" },
-    { image: b4, title: "Bhawan 4", price: "₹45,000", material: "Stone" },
-    { image: b5, title: "Bhawan 5", price: "₹70,000", material: "Marble" },
-    { image: b6, title: "Bhawan 6", price: "₹80,000", material: "Wooden" },
-    { image: b7, title: "Bhawan 7", price: "₹65,000", material: "Customized" },
-  ];
+import { FaClock, FaTag } from "react-icons/fa";
 
+const PricingCard = ({ title, image, price, time, description }) => {
   return (
-    <section className="pricing-section">
-      <motion.h2 
-        initial={{ opacity: 0, y: 50 }} 
-        whileInView={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 1 }}
-        className="pricing-title"
+    <motion.div
+      className="bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <div className="relative">
+        <img src={image} alt={title} className="w-full h-40 object-cover rounded-lg mb-4" />
+        <div className="absolute top-4 right-4 bg-orange-500 px-4 py-2 rounded-full text-white font-semibold">{price}</div>
+      </div>
+      <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+      <p className="text-sm text-gray-400 mb-4">{description}</p>
+      <div className="flex items-center gap-4 text-gray-300">
+        <div className="flex items-center gap-1">
+          <FaClock />
+          <span>{time}</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <FaTag />
+          <span>Premium</span>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const PricingSection = () => {
+  return (
+    <section className="pricing bg-gradient-to-b from-gray-900 via-gray-800 to-black py-16 text-center">
+      <motion.h2
+        className="text-4xl font-extrabold text-white mb-12"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 1 }}
       >
-        Bhawan Pricing & Details
+        Our Premium Bhawans & Idols
       </motion.h2>
 
-      <div className="pricing-grid">
-        {bhawans.map((item, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ scale: 1.1 }}
-            className="pricing-card"
-          >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="pricing-image"
-            />
-            <div className="overlay"></div>
-            <div className="overlay-text">View Details</div>
-
-            <div className="pricing-info">
-              <h3>{item.title}</h3>
-              <p>Material: {item.material}</p>
-              <p className="price">{item.price}</p>
-            </div>
-          </motion.div>
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-screen-xl mx-auto px-6">
+        <PricingCard
+          title="Bhawans B1"
+          image={b6}
+          price="₹15,000"
+          time="3-5 Days"
+          description="Perfect for small mandirs, events, and poojas. Crafted with care."
+        />
+        <PricingCard
+          title="Bhawans B2"
+          image="path-to-image/bhawans-b2.jpg"
+          price="₹18,000"
+          time="4-6 Days"
+          description="A bit larger and highly detailed. Ideal for medium-sized gatherings."
+        />
+        <PricingCard
+          title="Bhawans B3"
+          image={b6}
+          price="₹20,000"
+          time="5-7 Days"
+          description="Beautifully designed for temple and event setups."
+        />
+        <PricingCard
+          title="Idol - Laxmi"
+          image={b6}
+          price="₹8,000"
+          time="2-4 Days"
+          description="Finely detailed Laxmi idol for your home or temple."
+        />
+        <PricingCard
+          title="Idol - Ganesha"
+          image={b6}
+          price="₹7,500"
+          time="3-5 Days"
+          description="A charming Ganesha idol for festive poojas and worship."
+        />
+        <PricingCard
+          title="Bhawans B4"
+          image={b6}
+          price="₹25,000"
+          time="7-10 Days"
+          description="A larger Bhawan with intricate designs for grand events."
+        />
+        <PricingCard
+          title="Bhawans B5"
+          image={b6}
+          price="₹30,000"
+          time="7-10 Days"
+          description="Exclusive designs with premium clay and fiber."
+        />
+        {/* Add more Bhawans and Idols here (B6 to B11) */}
       </div>
     </section>
   );
 };
 
-export default Pricing;
-
-
+export default PricingSection;

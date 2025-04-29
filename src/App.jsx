@@ -10,7 +10,7 @@ import Pricing from './components/Pricing';
 import ContactForm from './components/ContactForm';
 import Testimonials from './components/Testimonials';
 import Home from './components/Home';
-import ParticleBackground from './components/ParticleBackground';
+// import ParticleBackground from './components/ParticleBackground';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/particle" element={<ParticleBackground />} />
+        {/* <Route path="/particle" element={<ParticleBackground />} /> */}
       </Routes>
     </div>
   );

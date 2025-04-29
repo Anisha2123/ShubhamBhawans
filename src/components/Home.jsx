@@ -9,6 +9,7 @@ import AboutUs from "./About";
 import ContactForm from "./ContactForm";
 import Testimonials from "./Testimonials";
 import Navbar from "./NavBar";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -41,9 +42,7 @@ const Home = () => {
       
 
       {/* Footer */}
-      <footer className="bg-orange-700 text-white text-center py-6 mt-10">
-        <p>© 2025 Shubhum Creations. All rights reserved.</p>
-      </footer>
+      <Footer />
 
     </main>
   );
