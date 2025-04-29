@@ -1,61 +1,111 @@
 
 
-// src/components/Navbar.jsx
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-scroll"; // Smooth scrolling
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = ["Home", "Gallery", "Services", "About", "Contact"];
+
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="fixed top-0 left-0 w-full bg-white shadow-md z-50"
-    >
-      <div className="container mx-auto flex justify-between items-center p-4">
-        
-        {/* Logo */}
-        <div className="text-2xl font-bold text-orange-600 cursor-pointer">
-          Shubham
-        </div>
+    <nav className="fixed top-0 w-full z-50">
+      <div className="backdrop-blur-md bg-black/30 shadow-md">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-bold text-orange-400 tracking-wider"
+          >
+            Shubham Bhawans
+          </motion.div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-10 text-gray-700 font-semibold">
-          <Link to="services" smooth={true} duration={500} className="hover:text-orange-600 cursor-pointer">Services</Link>
-          <Link to="pricing" smooth={true} duration={500} className="hover:text-orange-600 cursor-pointer">Pricing</Link>
-          <a href="#contact" className="hover:text-orange-600">Contact</a>
-        </div>
+          {/* Desktop Links */}
+          <div className="hidden md:flex space-x-8">
+            {navLinks.map((link, index) => (
+              <motion.a
+                key={index}
+                href={`#${link.toLowerCase()}`}
+                className="text-gray-300 hover:text-orange-400 transition-colors duration-300 text-lg"
+                whileHover={{ scale: 1.1 }}
+              >
+                {link}
+              </motion.a>
+            ))}
+          </div>
 
-        {/* Hamburger Icon (Mobile) */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            <div className="space-y-1">
-              <div className="w-6 h-0.5 bg-orange-600"></div>
-              <div className="w-6 h-0.5 bg-orange-600"></div>
-              <div className="w-6 h-0.5 bg-orange-600"></div>
-            </div>
-          </button>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-300 focus:outline-none"
+            >
+              {isOpen ? (
+                <motion.svg
+                  key="close"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </motion.svg>
+              ) : (
+                <motion.svg
+                  key="menu"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </motion.svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="absolute top-16 right-4 bg-white shadow-md rounded-lg p-6 flex flex-col gap-6 text-gray-700 font-semibold md:hidden"
-          >
-            <Link to="services" smooth={true} duration={500} className="hover:text-orange-600 cursor-pointer" onClick={() => setIsOpen(false)}>Services</Link>
-            <Link to="pricing" smooth={true} duration={500} className="hover:text-orange-600 cursor-pointer" onClick={() => setIsOpen(false)}>Pricing</Link>
-            <a href="#contact" className="hover:text-orange-600" onClick={() => setIsOpen(false)}>Contact</a>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col md:hidden bg-black/40 backdrop-blur-md"
+            >
+              {navLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={`#${link.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-300 hover:text-orange-400 px-6 py-4 border-b border-gray-700 text-center text-lg"
+                >
+                  {link}
+                </a>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
 export default Navbar;
+
+
+  
+
+
+
+
