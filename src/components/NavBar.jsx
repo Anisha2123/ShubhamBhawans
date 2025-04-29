@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = ["Home", "Gallery", "Services", "About", "Contact"];
+  const navLinks = ["Home", "Bhawans", "About", "Testimonials", "Contact"];
 
   return (
     <nav className="fixed top-0 w-full z-50">
@@ -24,16 +25,19 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8">
-            {navLinks.map((link, index) => (
-              <motion.a
-                key={index}
-                href={`#${link.toLowerCase()}`}
-                className="text-gray-300 hover:text-orange-400 transition-colors duration-300 text-lg"
-                whileHover={{ scale: 1.1 }}
-              >
-                {link}
-              </motion.a>
-            ))}
+            {navLinks.map((link, index) => {
+              const href = link === "Home" ? "/" : `/${link.toLowerCase()}`;
+              return (
+                <motion.a
+                  key={index}
+                  href={href}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 text-lg"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  {link}
+                </motion.a>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -53,7 +57,12 @@ const Navbar = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </motion.svg>
               ) : (
                 <motion.svg
@@ -66,7 +75,12 @@ const Navbar = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </motion.svg>
               )}
             </button>
@@ -83,16 +97,19 @@ const Navbar = () => {
               transition={{ duration: 0.4 }}
               className="flex flex-col md:hidden bg-black/40 backdrop-blur-md"
             >
-              {navLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={`#${link.toLowerCase()}`}
-                  onClick={() => setIsOpen(false)}
-                  className="text-gray-300 hover:text-orange-400 px-6 py-4 border-b border-gray-700 text-center text-lg"
-                >
-                  {link}
-                </a>
-              ))}
+              {navLinks.map((link, index) => {
+                const href = link === "Home" ? "/" : `/${link.toLowerCase()}`;
+                return (
+                  <a
+                    key={index}
+                    href={href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-gray-300 hover:text-orange-400 px-6 py-4 border-b border-gray-700 text-center text-lg"
+                  >
+                    {link}
+                  </a>
+                );
+              })}
             </motion.div>
           )}
         </AnimatePresence>
@@ -102,6 +119,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 
   

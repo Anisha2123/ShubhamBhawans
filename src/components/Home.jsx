@@ -44,8 +44,7 @@ const Home = () => {
       
 
       {/* Footer */}
-      <Footer />
-      <FloatingWhatsAppButton />
+    
     </main>
   );
 };

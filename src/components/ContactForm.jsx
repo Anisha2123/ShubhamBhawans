@@ -25,16 +25,16 @@ const ContactSection = () => {
       >
         {/* Phone */}
         <a
-          href="tel:+919876543210"
+          href="tel:+916306154227"
           className="flex items-center justify-center gap-4 bg-black/40 hover:bg-orange-600 transition-all text-white text-2xl font-semibold py-5 px-10 rounded-3xl shadow-xl hover:shadow-orange-400/40"
         >
           <FaPhoneAlt className="text-3xl" />
-          Call Now: +91 9876543210
+          Call Now: +91 630 615 4227
         </a>
 
         {/* WhatsApp */}
         <a
-          href="https://wa.me/919876543210"
+          href="https://wa.me/+916306154227"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-4 bg-green-600 hover:bg-green-700 transition-all text-white text-2xl font-semibold py-5 px-10 rounded-3xl shadow-xl hover:shadow-green-400/40"

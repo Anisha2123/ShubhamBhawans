@@ -51,11 +51,11 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-3">
               <FaPhoneAlt className="text-green-400" />
-              <a href="tel:+919876543210" className="hover:text-white transition">+91 98765 43210</a>
+              <a href="tel:+916306154227" className="hover:text-white transition">+91 630 615 4227</a>
             </li>
             <li className="flex items-center gap-3">
               <FaWhatsapp className="text-green-400" />
-              <a href="https://wa.me/919876543210" target="_blank" className="hover:text-white transition">Message on WhatsApp</a>
+              <a href="https://wa.me/916306154227" target="_blank" className="hover:text-white transition">Message on WhatsApp</a>
             </li>
           </ul>
         </div>
@@ -70,7 +70,7 @@ const Footer = () => {
             <a href="#" className="hover:text-orange-400 transition">
               <FaInstagram />
             </a>
-            <a href="https://wa.me/919876543210" className="hover:text-orange-400 transition">
+            <a  href="https://wa.me/+916306154227" className="hover:text-orange-400 transition">
               <FaWhatsapp />
             </a>
           </div>

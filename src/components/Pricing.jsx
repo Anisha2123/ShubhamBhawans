@@ -91,14 +91,14 @@ const PricingSection = () => {
         >
           Bhawans Collection
         </motion.h3>
-        <div className="flex flex-wrap justify-center gap-3 max-w-screen-xl mx-auto">
-          <PricingCard title="Bhawans B1" image={b1} price="₹15,000" time="3-5 Days" description="Perfect for small mandirs, events, and poojas." />
-          <PricingCard title="Bhawans B2" image={b2} price="₹18,000" time="4-6 Days" description="Highly detailed for medium gatherings." />
-          <PricingCard title="Bhawans B3" image={b3} price="₹20,000" time="5-7 Days" description="Elegant and beautifully designed setups." />
-          <PricingCard title="Bhawans B4" image={b4} price="₹25,000" time="7-10 Days" description="Grand events with intricate craftsmanship." />
-          <PricingCard title="Bhawans B5" image={b5} price="₹28,000" time="8-12 Days" description="Majestic mandapam setup for poojas." />
-          <PricingCard title="Bhawans B6" image={b6} price="₹32,000" time="9-13 Days" description="Ornate temple-style structures." />
-          <PricingCard title="Bhawans B7" image={b7} price="₹35,000" time="10-14 Days" description="Exclusive luxury crafted Bhawans." />
+        <div className="flex flex-wrap justify-center gap-10 max-w-screen-xl mx-auto">
+          <PricingCard title="Bhawans B1" image={b1} price="₹5,000" time="1-2 Days" description="Perfect for small mandirs, events, and poojas." />
+          <PricingCard title="Bhawans B2" image={b2} price="₹10,000" time="1-2 Days" description="Highly detailed for medium gatherings." />
+          <PricingCard title="Bhawans B3" image={b3} price="₹8,000" time="1-2 Days" description="Elegant and beautifully designed setups." />
+          <PricingCard title="Bhawans B4" image={b4} price="₹10,000" time="1-2 Days" description="Grand events with intricate craftsmanship." />
+          <PricingCard title="Bhawans B5" image={b5} price="₹10,000" time="1-2 Days" description="Majestic mandapam setup for poojas." />
+          <PricingCard title="Bhawans B6" image={b6} price="₹12,000" time="1-2 Days" description="Ornate temple-style structures." />
+          <PricingCard title="Bhawans B7" image={b7} price="₹10,000" time="10-14 Days" description="Exclusive luxury crafted Bhawans." />
         </div>
       </div>
 
@@ -112,7 +112,7 @@ const PricingSection = () => {
         >
           Idols Collection
         </motion.h3>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-screen-xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-10 max-w-screen-xl mx-auto">
           <PricingCard title="Idol - Laxmi" image={idol1} price="₹8,000" time="2-4 Days" description="Bless your home with Laxmi Mata’s grace." />
           <PricingCard title="Idol - Ganesha" image={idol2} price="₹7,500" time="3-5 Days" description="Divine Ganesha idol, perfect for all poojas." />
           {/* Add more idols if needed */}
