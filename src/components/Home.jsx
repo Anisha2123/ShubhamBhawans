@@ -16,7 +16,7 @@ const Home = () => {
     <main className="bg-orange-50 min-h-screen overflow-x-hidden">
       
       <Navbar/>
-      <section id="hero" className="py-15">
+      <section id="hero" className="pt-15">
         <HeroSection />
       </section>
 
