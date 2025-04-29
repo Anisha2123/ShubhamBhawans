@@ -139,12 +139,26 @@ const HeroSection = () => {
         transition={{ delay: 1, duration: 1 }}
         className="flex flex-col md:flex-row gap-4 z-10"
       >
-        <button className="px-8 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-orange-400 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300">
+        {/* <button className="px-8 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-orange-400 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300">
           View Gallery
         </button>
         <button className="px-8 py-4 border-2 border-orange-400 text-orange-400 font-semibold rounded-full hover:bg-orange-400 hover:text-black hover:shadow-lg hover:scale-105 transform transition duration-300">
           Book Now
-        </button>
+        </button> */}
+        <button
+  onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+  className="px-8 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-orange-400 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300"
+>
+  View Gallery
+</button>
+
+<button
+  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+  className="px-8 py-4 border-2 border-orange-400 text-orange-400 font-semibold rounded-full hover:bg-orange-400 hover:text-black hover:shadow-lg hover:scale-105 transform transition duration-300"
+>
+  Book Now
+</button>
+
       </motion.div>
 
       {/* Trust Section */}
