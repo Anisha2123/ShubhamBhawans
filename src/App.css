@@ -1,0 +1,385 @@
+
+
+@import "tailwindcss";
+
+
+/* ===========================HeroSection========================== */
+/* Glowing effect for background of Lottie animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 2px rgba(255, 165, 0, 0.5), 0 0 10px 5px rgba(255, 165, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(255, 140, 0, 1), 0 0 30px 10px rgba(255, 140, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px 2px rgba(255, 165, 0, 0.5), 0 0 10px 5px rgba(255, 165, 0, 0.3);
+  }
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite;
+}
+/* App.css */
+
+/* Button Primary */
+.btn-primary {
+  @apply px-8 py-4 bg-gradient-to-r from-orange-400 to-red-400 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300;
+}
+
+/* Button Secondary */
+.btn-secondary {
+  @apply px-8 py-4 border-2 border-orange-400 text-orange-500 font-semibold rounded-full hover:bg-orange-400 hover:text-white shadow-md hover:scale-105 transition-transform duration-300;
+}
+
+/* Hero Section Particle Customization (optional) */
+.hero canvas {
+  z-index: 0 !important;
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.2; }
+}
+.animate-pulse {
+  animation: pulseGlow 6s infinite;
+}
+
+
+/* ======================Pricing=================================== */
+/* Optional glowing effect for Bhawan images on hover */
+.group:hover .w-full {
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
+}
+
+/* Glow for table rows on hover */
+tr:hover {
+  background-color: rgba(255, 165, 0, 0.1); /* Light orange */
+  box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+}
+
+/* Pricing Section */
+.pricing-section {
+  background-color: #fff7ed;
+  padding: 4rem 2rem;
+}
+
+.pricing-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #c2410c;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Grid */
+.pricing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Card */
+.pricing-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 500px; /* ✅ Increased width */
+  height: 400px; /* ✅ Increased height */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Image */
+.pricing-image {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover .overlay {
+  opacity: 0;
+}
+
+/* Overlay Text */
+.overlay-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover .overlay-text {
+  opacity: 1;
+}
+
+/* Info */
+.pricing-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.pricing-info h3 {
+  font-size: 1.8rem;
+  color: #c2410c;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-info p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0.2rem 0;
+}
+
+.price {
+  color: #f97316;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+/* =========================Services================================ */
+
+.services-section {
+  background: linear-gradient(to bottom right, #fff7ed, #ffe8d6);
+  padding: 5rem 2rem;
+  overflow-x: hidden;
+}
+
+.services-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #c2410c;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+/* Card */
+.service-card {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 1.5rem;
+  /* overflow: hidden; */
+  width: 60rem;
+  /* height: 570px; */
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(158, 26, 26, 0.3);
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+}
+
+.service-image-container {
+  /* width: 100%; */
+  height: 80%;
+  overflow: hidden;
+}
+
+.service-image {
+  width: 50rem;
+  height: 20rem;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.1);
+}
+
+.service-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #c2410c;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  color: #374151;
+}
+
+.service-features li {
+  margin-bottom: 0.5rem;
+}
+
+.service-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f97316;
+  margin-top: 1rem;
+}
+
+/* Enquire Button */
+.enquire-button {
+  background: linear-gradient(to right, #fb923c, #f97316);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 9999px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.enquire-button:hover {
+  background: linear-gradient(to right, #f97316, #fb923c);
+  transform: scale(1.05);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close-button {
+  margin-top: 1.5rem;
+  background: #c2410c;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.close-button:hover {
+  background: #9a3412;
+}
+
+/* Responsive for Carousel */
+@media (max-width: 768px) {
+  .services-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .service-card {
+    min-width: 300px;
+    scroll-snap-align: center;
+  }
+}
+
+.services-grid {
+  display: flex;
+  overflow: hidden;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+  color: #333;
+  text-align: center;
+}
+
+.close-button {
+  background: #ff5722;
+  color: white;
+  padding: 8px 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: #e64a19;
+}
+
+
+
+
